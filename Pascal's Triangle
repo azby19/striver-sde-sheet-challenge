@@ -1,0 +1,22 @@
+class Solution {
+public:
+    vector<vector<int>> generate(int numRows) {
+        vector<vector<int>> pascal;
+        pascal.push_back({1});
+        if(numRows>1){
+        pascal.push_back({1, 1});
+        int k = 2;
+        while (k < numRows) {
+            vector<int> v;
+            v.push_back(1);
+            for (int i = 1; i < k; i++) {
+                v.push_back(pascal[k - 1][i - 1] + pascal[k - 1][i]);
+            }
+            v.push_back(1);
+            pascal.push_back(v);
+            k++;
+        }
+        }
+        return pascal;
+    }
+};
