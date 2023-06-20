@@ -1,3 +1,6 @@
+
+// solve this with out using sorting algo(nlogn) , do it in linear time(n)
+
 class Solution {
 public:
     void sortColors(vector<int>& nums) {
